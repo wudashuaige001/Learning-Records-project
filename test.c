@@ -70,23 +70,97 @@ void diandao(char* left, char* right)
 //        return x;
 //}
 
-int main()
+void move_odd_even(int *arr,int sz)
 {
-    unsigned int a;
-    for (a = 9; a >= 0; a--)
+    //int arr2[sz-1];
+    int* left=arr;
+    int* right=arr+sz-1;
+    int n=0;
+    int j=0;
+    while(left<right)
     {
-        printf("%u", a);
-        Sleep(1000);
+        while((left<right) && *left%2==1)
+        {
+            left++;
+        }
+        while((left<right) && *right%2==0)
+        {
+            right--;
+        }
+        if(left<right)
+        {
+            int tep=*left;
+            *left=*right;
+            *right=tep;
+            left++;
+            right--;
+        }
     }
 
+}
 
 
+int main()
+{
 
-
-
-
-
-
+    int n,m;
+    scanf("%d %d",&n,&m);
+    int narr[n];
+    int marr[m];
+    for(int l=0;l<n;l++)
+    {
+        scanf("%d",&narr[l]);
+    }
+    for(int o;o<m;o++)
+    {
+        scanf("%d",&marr[o]);
+    }
+    int i=0;
+    int j=0;
+    
+    while(i<n&&j<m)
+    {
+        if( narr[i]<marr[j])
+        {           
+            printf("%d ",narr[i]);
+            i++;
+        }
+        else
+        {           
+            printf("%d ",marr[j]);
+            j++;
+        }
+    }
+    if(i<n)
+    {
+        for(;i<n;i++)
+        {
+            printf("%d",narr[i]);
+        }
+    }
+    else
+    {
+        for(;j<m;j++)
+        {
+            printf("%d",marr[j]);
+        }
+    }
+     
+    /* //一个数组，前半部分是奇数，后半是偶数
+    //输入
+    int arr[10]={0};
+    int sz=sizeof(arr)/sizeof(arr[0]);
+    for(int i=0;i<10;i++)
+    {
+        scanf("%d",arr+i);
+    }
+    //调整
+    move_odd_even(arr,sz);
+    //输出
+    for(int i=0;i<10;i++)
+    {
+        printf("%d",*(arr+i));
+    } */
 
 
 
