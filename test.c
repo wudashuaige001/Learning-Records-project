@@ -111,15 +111,27 @@ void print1(int (*p)[5],int r,int c)
     }
 }
 
+int Add(int x,int y)
+{
+    return x+y;
+}
 int main()
 {
 
-//数组指针的使用
 
-    char* arr[5]={0};
-    char* (*p)[5]=&arr; 
+//函数指针的学习
+    int arr[5]={0};
+    int (*p)[5]=&arr;//数组指针
+    printf("%p ",&Add);
+    printf("%p ",Add);
+    int (*pf)(int ,int)=Add;
+    printf("%p",*pf);
+    int ret= (*pf)(2,3);
+    printf("\n");
+    printf("%d",ret);
+
     
-    
+//数组指针的使用,数组参数和指针参数    
     /* int arr[]={1,2,3,4,5,6,7,8,9,10};
     int (*p)[10]=&arr;
 
