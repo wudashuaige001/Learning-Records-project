@@ -115,26 +115,43 @@ int Add(int x,int y)
 {
     return x+y;
 }
+
+void Add1(int (*p)(int ,int))
+{
+    int a=2;
+    int b=3;
+    int ret=p(a,b);
+    printf("%d",ret);
+
+}
+
+
+
+
+
+
 int main()
 {
 
-
 //函数指针的学习
-    int arr[5]={0};
-    int (*p)[5]=&arr;//数组指针
-    printf("%p ",&Add);
-    printf("%p ",Add);
+//函数指针传递，在函数传递函数参数
+    
+    //printf("%p ",&Add);
+    //printf("%p ",Add);
     int (*pf)(int ,int)=Add;
-    printf("%p",*pf);
+    //printf("%p",*pf);
     int ret= (*pf)(2,3);
+    //int ret=pf(2,3)
     printf("\n");
-    printf("%d",ret);
+    //printf("%d",ret);
+    Add1(Add);
 
     
 //数组指针的使用,数组参数和指针参数    
     /* int arr[]={1,2,3,4,5,6,7,8,9,10};
     int (*p)[10]=&arr;
-
+    int arr[5]={0};
+    int (*p)[5]=&arr;//数组指针
     int sz=sizeof(arr)/sizeof(arr[0]);
     for(int i=0;i<sz;i++)
     {
