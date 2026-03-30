@@ -37,15 +37,15 @@ int Div(int x,int y)
     return x/y;
 }
 //阶乘
-int jie(int x)
+/* int jie(int x)
 {
     if (x == 1)
         return 1;
     else
         return x * jie(x - 1);
 
-}
-char* strcpy(char* x, const char* y)
+} */
+/* char* strcpy(char* x, const char* y)
 {
     char* tem = x;
     do
@@ -55,8 +55,8 @@ char* strcpy(char* x, const char* y)
         y++;
     } while (*y != '\0');
     return tem;
-}
-int my_strlen(const char* x)
+} */
+/* int my_strlen(const char* x)
 {
     int count = 0;
     assert(x);
@@ -67,8 +67,8 @@ int my_strlen(const char* x)
     }
     return count;
 
-}
-void diandao(char* left, char* right)
+} */
+/* void diandao(char* left, char* right)
 {
     char tem = 0;
 
@@ -81,7 +81,7 @@ void diandao(char* left, char* right)
         left++;
         right--;
     }
-}
+} */
 //int pow(int x, int y)
 //{
 //    int a = x;
@@ -93,7 +93,7 @@ void diandao(char* left, char* right)
 //        return x;
 //}
 
-void move_odd_even(int *arr,int sz)
+/* void move_odd_even(int *arr,int sz)
 {
     //int arr2[sz-1];
     int* left=arr;
@@ -120,8 +120,8 @@ void move_odd_even(int *arr,int sz)
         }
     }
 
-}
-void print1(int (*p)[5],int r,int c)
+} */
+/* void print1(int (*p)[5],int r,int c)
 {
     for(int i=0;i<r;i++)
     {
@@ -132,15 +132,15 @@ void print1(int (*p)[5],int r,int c)
         }
         printf("\n");
     }
-}
-void Add1(int (*p)(int ,int))
+} */
+/* void Add1(int (*p)(int ,int))
 {
     int a=2;
     int b=3;
     int ret=p(a,b);
     printf("%d",ret);
 
-}
+} */
 
 
 
@@ -149,16 +149,48 @@ int main()
 {
 
 
-
-//函数指针的用途
-//计算器
     
-    int x=0;
+
+
+//函数指针的用途,回调函数
+//和函数指针数组的学习
+//计算器    
+     int x=0;
     int y=0;
     int ret=0;
     int input=0;
-    
+//函数指针数组
+    int (*arr[5])(int ,int )={0, Add,Sub,Mul,Div};
     do
+    {
+        printf("输入计算方式\n");
+        scanf("%d",&input);
+        if(input==0)
+        {
+            printf("退出\n");
+        }
+        else if(input>=1&&input <=4)
+        {
+            printf("输入要计算的数\n");
+            scanf("%d %d",&x,&y);
+            ret=arr[input](x,y);
+            printf("%d",ret);
+
+        }
+        else
+        {
+            printf("输入错误\n");
+        }
+    } while (input);
+    
+    
+    
+
+
+
+
+
+    /* do
     {
         printf("选择计算方式\n加法1,减法2,乘法3,除法4\n");
         scanf("%d",&input);
@@ -170,6 +202,7 @@ int main()
             printf("退出游戏\n");
             break;
         case 1:
+            
             calc(Add);
             break;
         case 2:
@@ -187,8 +220,8 @@ int main()
         }
 
 
-    } while (input);
-    
+    } while (input); 
+ */    
     
 
 
