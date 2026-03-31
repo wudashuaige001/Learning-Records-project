@@ -143,7 +143,7 @@ int Div(int x,int y)
 } */
 
 
-void bubble_sort(int *arr,int sz)
+/* void bubble_sort(int *arr,int sz)
 {
     int i=0,j=0;
     int temp=0;
@@ -160,21 +160,50 @@ void bubble_sort(int *arr,int sz)
             }
         }
     }
+} */
+int cmp_int(const void* e1,const void* e2)
+{
+    return (*(int*) e1) - (*(int*)e2);
 }
+
+struct stu
+{
+    char name[20];
+    int age;
+};
 
 
 int main()
 {
+    
 
 
-    int arr[5]={3,4,5,2,8};
+
+
+
+
+
+
+//学习qsort 使用快速排序的思想
+    int arr[10]={9,8,7,6,5,4,3,2,1,0};
+    int sz=sizeof(arr)/sizeof(arr[0]);
+    qsort(arr,sz,sizeof(arr[0]),cmp_int);
+    for(int i=0;i<sz;i++)
+    {
+        printf("%d \n",arr[i]);
+    }
+
+
+
+/*     int arr[5]={3,4,5,2,8};
     int sz=sizeof(arr)/sizeof(arr[0]);
     bubble_sort(arr,sz);
     printf("%d  \n",sz);
     for(int i=0;i<sz;i++)
     {
         printf("%d \n",arr[i]);
-    }
+    } 
+*/
 
 
     
