@@ -143,10 +143,38 @@ int Div(int x,int y)
 } */
 
 
+void bubble_sort(int *arr,int sz)
+{
+    int i=0,j=0;
+    int temp=0;
+    for(i=0;i<sz-1;i++)
+    {
+        for(j=0;j<sz-i-1;j++)
+        {
+            if(arr[j+1]<arr[j])
+            {
+                temp=arr[j];
+                arr[j]=arr[j+1];
+                arr[j+1]=temp;
+
+            }
+        }
+    }
+}
 
 
 int main()
 {
+
+
+    int arr[5]={3,4,5,2,8};
+    int sz=sizeof(arr)/sizeof(arr[0]);
+    bubble_sort(arr,sz);
+    printf("%d  \n",sz);
+    for(int i=0;i<sz;i++)
+    {
+        printf("%d \n",arr[i]);
+    }
 
 
     
@@ -155,7 +183,7 @@ int main()
 //函数指针的用途,回调函数
 //和函数指针数组的学习
 //计算器    
-     int x=0;
+/*      int x=0;
     int y=0;
     int ret=0;
     int input=0;
@@ -186,10 +214,10 @@ int main()
     
     /* int *arr[5]={arr1,arr2,arr3,arr4,arr5};
     int (*arr)[5]=&arr; */
-    int (*pf[5])(int,int)={0,Add,Sub,Mul,Div};
+/*     int (*pf[5])(int,int)={0,Add,Sub,Mul,Div};
 //指向【函数指针数组】的指针
-    int (*(*ppf)[5])(int,int)=&pf;
-
+    int (*(*ppf)[5])(int,int)=&pf; 
+*/
 
 
 
@@ -326,7 +354,7 @@ int main()
         }
     } */
      
-    /* //一个数组，前半部分是奇数，后半是偶数
+/* //一个数组，前半部分是奇数，后半是偶数
     //输入
     int arr[10]={0};
     int sz=sizeof(arr)/sizeof(arr[0]);
@@ -395,7 +423,7 @@ int main()
 
 
 
-    //喝饮料两块一瓶，两个瓶盖换一瓶
+//喝饮料两块一瓶，两个瓶盖换一瓶
         //int n = 0;
         //int sum = 0;
         //int count = 0;
