@@ -160,6 +160,7 @@ int main()
     int ret=0;
     int input=0;
 //函数指针数组
+//转移表
     int (*arr[5])(int ,int )={0, Add,Sub,Mul,Div};
     do
     {
@@ -174,7 +175,7 @@ int main()
             printf("输入要计算的数\n");
             scanf("%d %d",&x,&y);
             ret=arr[input](x,y);
-            printf("%d",ret);
+            printf("%d\n",ret);
 
         }
         else
@@ -183,8 +184,11 @@ int main()
         }
     } while (input);
     
-    
-    
+    /* int *arr[5]={arr1,arr2,arr3,arr4,arr5};
+    int (*arr)[5]=&arr; */
+    int (*pf[5])(int,int)={0,Add,Sub,Mul,Div};
+//指向【函数指针数组】的指针
+    int (*(*ppf)[5])(int,int)=&pf;
 
 
 
