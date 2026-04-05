@@ -10,6 +10,11 @@ struct peo
     char tele[12];
     int high;
 };
+struct stu
+{
+    char name[20];
+    int age;
+};
 //计算器函数
 void calc (int (*p)(int ,int ))
 {   
@@ -162,11 +167,7 @@ int Div(int x,int y)
     }
 } */
 
-struct stu
-{
-    char name[20];
-    int age;
-};
+
 
 int cmp_int(const void* e1,const void* e2)
 {
@@ -188,7 +189,7 @@ int main()
 {
     
 //测试使用qsort来排序结构体数据
-    int arr[10]={0,9,8,7,6,5,4,3,2,1};
+/*     int arr[10]={0,9,8,7,6,5,4,3,2,1};
     //int sz=sizeof(arr)/sizeof(arr[0]);
     struct stu s[]={{"zhangsna",25},{"lisi",21},{"wangwu",29},{"xiaoliu",31}};
     int sz=sizeof(s)/sizeof(s[0]);
@@ -197,7 +198,7 @@ int main()
     for(int i=0;i<sz;i++)
     {
         printf("%d ",(s+i)->age);
-    }
+    } */
 
 
 
